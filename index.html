@@ -67,25 +67,36 @@ button.next {
 
 function showSlide(index) {
   const slides = document.querySelectorAll('.slide');
-  console.log("slides showSlide-->", slides);
+const slideArray = Array.from(slides); // Convert NodeList to Array
+const numToRemove = Math.floor(Math.random() * slideArray.length);
+for (let i = 0; i < numToRemove; i++) {
+  const randomIndex = Math.floor(Math.random() * slideArray.length);
+  slideArray.splice(randomIndex, 1);
+}
+var toNodeList = function(slideArray){
+  var fragment = document.createDocumentFragment();
+  slideArray.forEach(function(item){
+    fragment.appendChild(item.cloneNode());
+  });
+  return fragment.childNodes;
+};
+const trimmedSlides = toNodeList(slideArray);
+  console.log("trimmedSlides", trimmedSlides);
   console.log("slideIndex", slideIndex);
-  slides.forEach(slide => {
-    slide.style.display = 'none';
+  trimmedSlides.forEach(slide => {
+    trimmedSlides.style.display = 'none';
   });
 
-  if (index >= slides.length) {
+  if (index >= trimmedSlides.length) {
     slideIndex = 0;
   } else if (index < 0) {
-    slideIndex = slides.length - 1;
+    slideIndex = trimmedSlides.length - 1;
   }
 
-  slides[slideIndex].style.display = 'block';
+  trimmedSlides[slideIndex].style.display = 'block';
 }
 
 function showRandomSlides() {
-  const slides = document.querySelectorAll('.slide');
-  console.log("slides showRandomSlides-->", slides);
-  slideIndex = Math.floor(Math.random() * slides.length);
   showSlide(slideIndex);
 }
 
