@@ -84,7 +84,7 @@ const trimmedSlides = toNodeList(slideArray);
   console.log("trimmedSlides", trimmedSlides);
   console.log("slideIndex", slideIndex);
   trimmedSlides.forEach(slide => {
-    trimmedSlides.style.display = 'none';
+    slide.style.display = 'none';
   });
 
   if (index >= trimmedSlides.length) {
