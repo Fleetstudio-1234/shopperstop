@@ -67,6 +67,8 @@ button.next {
 
 function showSlide(index) {
   const slides = document.querySelectorAll('.slide');
+  console.log("slides showSlide-->", slides);
+  console.log("slideIndex", slideIndex);
   slides.forEach(slide => {
     slide.style.display = 'none';
   });
@@ -81,7 +83,8 @@ function showSlide(index) {
 }
 
 function showRandomSlides() {
-    const slides = document.querySelectorAll('.slide');
+  const slides = document.querySelectorAll('.slide');
+  console.log("slides showRandomSlides-->", slides);
   slideIndex = Math.floor(Math.random() * slides.length);
   showSlide(slideIndex);
 }
