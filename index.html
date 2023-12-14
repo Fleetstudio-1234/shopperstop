@@ -25,8 +25,56 @@
 <link rel="alternate" type="text/xml+oembed" href="./wp-json/oembed/1.0/embed/index.html?url=.%2F&#038;format=xml">
 <noscript><style>.woocommerce-product-gallery{opacity:1!important}</style></noscript>
 <style id="wp-custom-css">.ast-cart-menu-wrap .count,.ast-cart-menu-wrap .count:after{border-color:#aaa;color:#aaa}</style>
+  <script>
+    let slideIndex = 0;
+const slidesContainer = document.querySelector('.slides');
+const firstSlide = document.querySelector('.slide');
+
+// Function to duplicate the first slide and add it as an extra slide
+function duplicateFirstSlide() {
+  const cloneSlide = firstSlide.cloneNode(true);
+  slidesContainer.appendChild(cloneSlide);
+}
+
+duplicateFirstSlide();
+showSlides(slideIndex);
+
+function showSlides(index) {
+  const slides = document.querySelectorAll('.slide');
+  if (index >= slides.length) {
+    slideIndex = 0;
+  }
+  if (index < 0) {
+    slideIndex = slides.length - 1;
+  }
+  slides.forEach(slide => {
+    slide.style.display = 'none';
+  });
+  slides[slideIndex].style.display = 'block';
+}
+
+document.querySelector('.prev').addEventListener('click', () => {
+  showSlides(--slideIndex);
+});
+
+document.querySelector('.next').addEventListener('click', () => {
+  showSlides(++slideIndex);
+});
+  </script> 
 </head>
 <body itemtype="https://schema.org/WebPage" itemscope="itemscope" class="home page-template-default page page-id-1407 wp-custom-logo theme-astra woocommerce-no-js ast-single-post ast-mobile-inherit-site-logo ast-woocommerce-cart-menu ast-inherit-site-logo-transparent ast-theme-transparent-header astra-hfb-header ast-desktop ast-page-builder-template ast-no-sidebar astra-3.0.2 elementor-default elementor-kit-1390 elementor-page elementor-page-1407">
+<div class="carousel">
+  <div class="slides">
+    <div class="slide">
+      <img src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=600">
+      <img src="https://images.pexels.com/photos/6153354/pexels-photo-6153354.jpeg?auto=compress&cs=tinysrgb&w=600">
+      <img src="https://images.pexels.com/photos/97077/pexels-photo-97077.jpeg?auto=compress&cs=tinysrgb&w=600">
+      <img src="https://images.pexels.com/photos/2085831/pexels-photo-2085831.jpeg?auto=compress&cs=tinysrgb&w=600">
+    </div>
+  </div>
+  <button class="prev">Previous</button>
+  <button class="next">Next</button>
+</div>
 <div class="hfeed site" id="page">
 <a class="skip-link screen-reader-text" href="#content">Skip to content</a><header class="site-header ast-primary-submenu-animation-slide-up header-main-layout-1 ast-primary-menu-enabled ast-builder-menu-toggle-icon ast-mobile-header-inline" id="masthead" itemtype="https://schema.org/WPHeader" itemscope="itemscope" itemid="#masthead"><div id="ast-desktop-header"><div class="ast-main-header-wrap main-header-bar-wrap"><div class="ast-primary-header-bar ast-primary-header main-header-bar site-primary-header-wrap ast-builder-grid-row-container site-header-focus-item" data-section="section-primary-header-builder"><div class="ast-builder-grid-row-container-inner"><div class="site-container site-primary-header-wrap ast-builder-grid-row-container site-header-focus-item ast-container" data-section="section-primary-header-builder"><div class="site-primary-header-inner-wrap ast-builder-grid-row ast-builder-grid-row-has-sides ast-builder-grid-row-no-center">
 <div class="site-header-primary-section-left site-header-section ast-flex site-header-section-left"><div class="ast-builder-layout-element ast-flex site-header-focus-item" data-section="title_tagline"><div class="site-branding"><div class="ast-site-identity" itemtype="https://schema.org/Organization" itemscope="itemscope">
