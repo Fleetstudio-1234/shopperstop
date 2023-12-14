@@ -64,10 +64,9 @@ button.next {
 <style id="wp-custom-css">.ast-cart-menu-wrap .count,.ast-cart-menu-wrap .count:after{border-color:#aaa;color:#aaa}</style>
   <script>
  let slideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-console.log("slides-->", slides);
 
 function showSlide(index) {
+  const slides = document.querySelectorAll('.slide');
   slides.forEach(slide => {
     slide.style.display = 'none';
   });
@@ -82,6 +81,7 @@ function showSlide(index) {
 }
 
 function showRandomSlides() {
+    const slides = document.querySelectorAll('.slide');
   slideIndex = Math.floor(Math.random() * slides.length);
   showSlide(slideIndex);
 }
