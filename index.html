@@ -91,14 +91,13 @@ function showRandomSlides() {
 
 document.addEventListener('DOMContentLoaded', () => {
   showRandomSlides();
-});
-
-document.querySelector('.prev').addEventListener('click', () => {
+  document.querySelector('.prev').addEventListener('click', () => {
   showSlide(--slideIndex);
 });
 
 document.querySelector('.next').addEventListener('click', () => {
   showSlide(++slideIndex);
+});
 });
   </script> 
 </head>
